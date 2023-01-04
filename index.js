@@ -24,6 +24,15 @@ const applicantSchema = new mongoose.Schema({
     major: String,
     gpa: String,
     totalGpa: String,
+    doneVolunteerWork: Boolean,
+    ResumeFile: {
+        fieldname: String,
+        originalname: String,
+        encoding: String,
+        mimetype: String,
+        buffer: Buffer,
+        size: Number
+    }
 });
 
 const Applicant = mongoose.model("applicant", applicantSchema);
@@ -31,15 +40,24 @@ const Applicant = mongoose.model("applicant", applicantSchema);
 app.post("/", upload.any(),(request, response) => {
     
     const textData = request.body;
-    console.log(textData);
+    const fileData = request.files[0];
     const applic = new Applicant({
         fullName: textData.fullName,
         phone: textData.phone,
         email: textData.email,
         school: textData.school,
         major: textData.major,
-        gpa: textData.major,
-        totalGpa: textData.totalGpa
+        gpa: textData.gpa,
+        totalGpa: textData.totalGpa,
+        doneVolunteerWork: textData.doneVolunteerWork,
+        ResumeFile: {
+            fieldname: fileData.fieldname,
+            originalname: fileData.originalname,
+            encoding: fileData.encoding,
+            mimetype: fileData.mimetype,
+            buffer: fileData.buffer,
+            size: fileData.size
+        }
     });
 
     applic.save();
