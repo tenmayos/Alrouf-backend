@@ -14,7 +14,7 @@ This system was meant for demonstration purposes only.
 
 ## How to use
 
-1. We will need to install the required dependencies using NPM ![npm install](/Ref_Images/npm.png)
+1. We will need to install the required dependencies using NPM with the following command `npm install` ![npm install](/Ref_Images/npm.png)
 
  * We should see the following message when the installation of dependencies is complete ![dependencies installed successfully](/Ref_Images/npm-installed.png)
 
