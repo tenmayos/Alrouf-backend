@@ -18,7 +18,7 @@ This system was meant for demonstration purposes only.
 
  * We should see the following message when the installation of dependencies is complete ![dependencies installed successfully](/Ref_Images/npm-installed.png)
 
-2. Run the api through the entry file index.js using the following command `**node index.js**`
+2. Run the api through the entry file index.js using the following command `node index.js`
  * If all is well the following output should be displayed in the terminal ![API is waiting for calls](/Ref_Images/running.png)
 
 Now this small API should be ready to recieve requests from the frontend with the assumption that they are running on the same machine.
